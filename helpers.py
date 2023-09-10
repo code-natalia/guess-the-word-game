@@ -17,8 +17,7 @@ def input_word_len():
         return number_of_letters
 
 
-def filter_words(opened_file, number_of_letters ):
-    
+def filter_words(opened_file, number_of_letters):
     words_in_game = []
 
     for line in opened_file:
@@ -26,6 +25,7 @@ def filter_words(opened_file, number_of_letters ):
             words_in_game.append(line[:-1].upper())
 
     return words_in_game
+
 
 def compute_frequency(word):
     letter_frequency = {}
@@ -38,8 +38,8 @@ def compute_frequency(word):
 
     return letter_frequency
 
-def guessing(words_in_game, word, number_of_letters):
 
+def guessing(words_in_game, word, number_of_letters):
     print("masz 6 prób aby odgadnąć słowo")
 
     for i in range(1, 11):
@@ -53,7 +53,6 @@ def guessing(words_in_game, word, number_of_letters):
             guess = input("podaj słowo = ").upper()
 
         letter_frequency = compute_frequency(word)
-
 
         for i in range(number_of_letters):
             if guess[i] == word[i]:
@@ -79,14 +78,7 @@ def guessing(words_in_game, word, number_of_letters):
             print(out)
 
     print("hasło to: " + word)
-    
-
 
 
 def game(words_in_game, word, number_of_letters):
-
     guessing(words_in_game, word, number_of_letters)
-
-
-
-
